@@ -1,9 +1,9 @@
 #include "Config.h"
 #include "jointsCtrl.h"
 
-void JointsCtrl::init(int baud) {
+void JointsCtrl::init(int baud, std::string port) {
 
-    serial.begin(baud, "/dev/ttyUSB0");
+    serial.begin(baud, port.c_str());
     sc.pSerial = &serial;
     smst.pSerial = &serial;
     hl.pSerial = &serial;
