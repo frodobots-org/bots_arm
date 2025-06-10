@@ -1,7 +1,7 @@
 #ifndef JOINTS_CTRL_H
 #define JOINTS_CTRL_H
 
-#include <SCServo.h>
+#include "FTServo/SCServo.h"
 #ifdef USE_HUB_MOTORS
 #include <GJWMotor.h>
 #endif

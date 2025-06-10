@@ -11,7 +11,7 @@
 #if defined(ARDUINO) && ARDUINO >= 100
 #include "Arduino.h"
 #else
-#include "serial.h"
+#include "../serial.h"
 #endif
 
 #include "SCS.h"

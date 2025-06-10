@@ -10,11 +10,12 @@ include_directories(
 )
 
 file(GLOB_RECURSE SOURCES 
-    ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/jointsCtrl.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/serial.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/max.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/FTServo/*.cpp
 )
 
-add_executable(${PROJECT_NAME} ${SOURCES})
+add_library(frodobots-bots_arm STATIC ${SOURCES})
+
+add_executable(${PROJECT_NAME} ${SOURCES} "./main.cpp")
