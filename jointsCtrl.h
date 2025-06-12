@@ -130,7 +130,7 @@ class JointsCtrl {
         bool linkArmFeedbackFlag = false; // link arm feedback flag
         int linkArmFeedbackHz = 10; // link arm feedback Hz
 
-        void init(int baud, std::string port);
+        bool init(int baud, std::string port);
         void setBaudRate(int baud);
         bool setJointType(u_int8_t type);
         bool setEncoderStepRange(u_int16_t steps, double angle);

@@ -1,9 +1,9 @@
 #include "Config.h"
 #include "jointsCtrl.h"
 
-void JointsCtrl::init(int baud, std::string port) {
+bool JointsCtrl::init(int baud, std::string port) {
 
-    serial.begin(baud, port.c_str());
+    bool ret = serial.begin(baud, port.c_str());
     sc.pSerial = &serial;
     smst.pSerial = &serial;
     hl.pSerial = &serial;
@@ -14,6 +14,7 @@ void JointsCtrl::init(int baud, std::string port) {
     gqdmd.setTimeOut(2);
 #endif
 
+    return ret;
 }
 
 void JointsCtrl::setBaudRate(int baud) {
